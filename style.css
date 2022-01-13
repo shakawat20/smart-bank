@@ -1,0 +1,10 @@
+h1{
+    font-size: 25px;
+    color: rgb(108, 218, 181);
+}
+.bank-title{
+    text-align: center;
+}
+.submit-area{
+    box-shadow: 3px 5px 9px gray;
+}
