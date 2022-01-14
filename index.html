@@ -12,17 +12,36 @@
 </head>
 
 <body>
-    <div class="container ">
-        <h1>Smart Bank</h1>
+    <div id="login-area">
+        <h1 class="text-center"> Smart Bank</h1>
         <div class="submit-area">
+
             <h4>Login</h4>
-            <input type="text" class="form-control pad">
+            <input type="text" class="form-control " placeholder="Email">
             <br>
-            <input type="password" class="form-control pad" placeholder="Password">
+            <input type="password" class="form-control " placeholder="Password">
             <br>
-            <button class="btn btn-success"> Enter</button>
+            <button class="btn btn-success" id="loginbtn"> Enter</button>
         </div>
     </div>
+    <div id="next">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestias commodi dolores illo eligendi.
+            Impedit nihil ullam magni, labore corporis provident debitis? Doloribus nemo cumque doloremque assumenda.
+            Iure, exercitationem consectetur nihil at ratione omnis obcaecati dignissimos odit, esse iusto magni
+            repellendus maiores aut, facere eos. Expedita blanditiis nulla accusamus? Eos ipsa beatae aliquam sapiente
+            velit. Labore dolores ex distinctio corrupti, repellendus odio consequuntur quasi libero molestiae culpa
+            temporibus fugit rem. Rerum autem eum culpa maiores? Earum voluptate pariatur et natus.</p>
+    </div>
+    <script>
+        document.getElementById('loginbtn').addEventListener('click', function () {
+            let log = document.getElementById('login-area');
+            log.style.display = "none";
+            document.getElementById("next").style.display='block'            
+
+        })
+
+    </script>
+
 </body>
 
 </html>
