@@ -15,6 +15,25 @@ body{
     padding: 100px;
 
 }
-#next{
+#transection-area{
     display: none;
+}
+.deposit{
+background-color: rgb(72, 72, 168);
+
+}
+.withdraw{
+    background-color: lightsalmon;
+    
+    
+}
+.balance{
+    background-color: orange;
+
+}
+.status{
+    margin:0 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
 }

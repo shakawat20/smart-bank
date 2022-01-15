@@ -24,19 +24,33 @@
             <button class="btn btn-success" id="loginbtn"> Enter</button>
         </div>
     </div>
-    <div id="next">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestias commodi dolores illo eligendi.
-            Impedit nihil ullam magni, labore corporis provident debitis? Doloribus nemo cumque doloremque assumenda.
-            Iure, exercitationem consectetur nihil at ratione omnis obcaecati dignissimos odit, esse iusto magni
-            repellendus maiores aut, facere eos. Expedita blanditiis nulla accusamus? Eos ipsa beatae aliquam sapiente
-            velit. Labore dolores ex distinctio corrupti, repellendus odio consequuntur quasi libero molestiae culpa
-            temporibus fugit rem. Rerum autem eum culpa maiores? Earum voluptate pariatur et natus.</p>
+    <div id="transection-area">
+        <div class="row">
+            <div class="col-md-4 ">
+                <div class="status deposit">
+                <h1>Deposit</h1>
+                <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+               <div class="status withdraw">
+                <h1>Withdraw</h1>
+                <h2>$00</h2>
+               </div>
+            </div>
+            <div class="col-md-4">
+                <div class="status balance">
+                    <h1>Balance</h1>
+                    <h2>$1200</h2>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         document.getElementById('loginbtn').addEventListener('click', function () {
             let log = document.getElementById('login-area');
             log.style.display = "none";
-            document.getElementById("next").style.display='block'            
+            document.getElementById("transection-area").style.display = 'block'
 
         })
 
