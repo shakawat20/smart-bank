@@ -35,13 +35,13 @@
             <div class="col-md-4 ">
                 <div class="status withdraw">
                     <h1>Withdraw</h1>
-                    <h2>$00</h2>
+                    <h2>$<span id="currentWithdraw">00</span</h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="status balance">
                     <h1>Balance</h1>
-                    <h2>$1200</h2>
+                    <h2>$<span id="s-balance">1200</span></h2>
                 </div>
             </div>
         </div>
@@ -58,9 +58,10 @@
             <div class="col-md-6 ">
                 <div class="submit-area">
                     <h4>Withdraw</h4>
-                    <input type="text" class="form-control" placeholder="Amount you want to withdraw">
+                    <input type="text" class="form-control" placeholder="Amount you want to withdraw"
+                        id="withdrawAmount">
                     <br>
-                    <button class="btn btn-success">Withdraw</button>
+                    <button class="btn btn-success" id="withdrawBtn"> Withdraw</button>
                 </div>
             </div>
         </div>
@@ -76,23 +77,50 @@
 
         document.getElementById("deposit-button").addEventListener('click', function () {
 
-            const amountDeposit = document.getElementById('amountDeposit').value
-            const amountNumber = parseFloat(amountDeposit)
+          
+             const amountNumber = parseString('amountDeposit')
 
 
+            updateSpanTag("s-balance", amountNumber);
+            updateSpanTag("total-deposit", amountNumber)
 
-            const totalAmount = document.getElementById("total-deposit").innerHTML
-            const NewtotalAmount = parseFloat(totalAmount)
-            const newAmountTotal = NewtotalAmount + amountNumber
-
-            document.getElementById('total-deposit').innerHTML = newAmountTotal
-
+            document.getElementById('amountDeposit').value = "";
+        })
 
 
+        //withdraw
+        document.getElementById("withdrawBtn").addEventListener("click", function () {
+            const withdrawNumber = parseString('withdrawAmount')
+            updateSpanTag('currentWithdraw',withdrawNumber)
+            updateSpanTag("s-balance", -1*withdrawNumber)
 
+            document.getElementById("withdrawAmount").value=""
 
 
         })
+
+
+
+
+
+
+function parseString(id){
+    const amountDeposit = document.getElementById(id).value
+    const realAmount=parseFloat(amountDeposit)
+    return realAmount
+
+}
+
+
+
+        function updateSpanTag(id, amountNumber) {
+
+            const totalDepositBalance = document.getElementById(id).innerHTML;
+            const lastTotalDepositBalance = parseFloat(totalDepositBalance)
+            const balance = lastTotalDepositBalance + amountNumber
+            document.getElementById(id).innerHTML = balance
+
+        }
 
 
     </script>
