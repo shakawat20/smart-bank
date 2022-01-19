@@ -74,11 +74,11 @@
             document.getElementById("transection-area").style.display = 'block'
 
         })
-
+        //deposit button
         document.getElementById("deposit-button").addEventListener('click', function () {
 
-          
-             const amountNumber = parseString('amountDeposit')
+
+            const amountNumber = parseString('amountDeposit')
 
 
             updateSpanTag("s-balance", amountNumber);
@@ -91,28 +91,26 @@
         //withdraw
         document.getElementById("withdrawBtn").addEventListener("click", function () {
             const withdrawNumber = parseString('withdrawAmount')
-            updateSpanTag('currentWithdraw',withdrawNumber)
-            updateSpanTag("s-balance", -1*withdrawNumber)
-
-            document.getElementById("withdrawAmount").value=""
+            updateSpanTag('currentWithdraw', withdrawNumber)
+            updateSpanTag("s-balance", -1 * withdrawNumber)
+            document.getElementById("withdrawAmount").value = ""
 
 
         })
 
 
+        //function of converting string to number
 
 
+        function parseString(id) {
+            const amountDeposit = document.getElementById(id).value
+            const realAmount = parseFloat(amountDeposit)
+            return realAmount
+
+        }
 
 
-function parseString(id){
-    const amountDeposit = document.getElementById(id).value
-    const realAmount=parseFloat(amountDeposit)
-    return realAmount
-
-}
-
-
-
+        //set balance
         function updateSpanTag(id, amountNumber) {
 
             const totalDepositBalance = document.getElementById(id).innerHTML;
