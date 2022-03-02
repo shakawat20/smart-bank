@@ -77,14 +77,18 @@
         //deposit button
         document.getElementById("deposit-button").addEventListener('click', function () {
 
-
             const amountNumber = parseString('amountDeposit')
-
-
-            updateSpanTag("s-balance", amountNumber);
+            if(amountNumber<0){
+                alert("you can't give negative number")
+            }
+            else{
+                updateSpanTag("s-balance", amountNumber);
             updateSpanTag("total-deposit", amountNumber)
 
             document.getElementById('amountDeposit').value = "";
+            }
+
+
         })
 
 
